@@ -1,0 +1,6 @@
+{
+  "id": "test4_review",
+  "name": "Code review",
+  "task": "Review this code patch and return APPROVE or REJECT with max 3 reasons:\n\ndef add_user(users, name, email):\n    users.append({\"name\": name, \"email\": email})\n    return True\n\nReturn format: DECISION: [APPROVE/REJECT]\\nReasons:\\n1) ...",
+  "expected_output": "review_decision"
+}

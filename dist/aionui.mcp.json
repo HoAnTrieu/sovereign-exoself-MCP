@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "sovereign-exoself": {
+      "description": "Local durable personal council",
+      "command": "/home/hat/AionUI/sovereign-exoself-mcp/.venv/bin/python",
+      "args": [
+        "-m",
+        "sovereign_exoself_mcp"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "SOVEREIGN_PROVIDER_MODE": "openrouter"
+      }
+    }
+  }
+}

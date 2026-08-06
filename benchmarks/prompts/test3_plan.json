@@ -1,0 +1,6 @@
+{
+  "id": "test3_plan",
+  "name": "Technical planning",
+  "task": "Break down this requirement into a short implementation plan: 'Build a REST API with user authentication, rate limiting, and PostgreSQL database'. Return a numbered list of steps.",
+  "expected_output": "numbered_list"
+}

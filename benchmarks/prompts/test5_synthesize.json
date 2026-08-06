@@ -1,0 +1,6 @@
+{
+  "id": "test5_synthesize",
+  "name": "JSON synthesis",
+  "task": "Combine these two code reviews into a single JSON object:\nReview 1: {\"status\": \"pass\", \"issues\": []}\nReview 2: {\"status\": \"warning\", \"issues\": [\"minor style issue\"]}\nReturn valid JSON with combined status and all issues.",
+  "expected_output": "json_object"
+}

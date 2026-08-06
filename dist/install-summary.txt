@@ -1,0 +1,5 @@
+cd /home/hat/AionUI/sovereign-exoself-mcp
+uv sync --frozen
+OpenCode: ~/.config/opencode/opencode.json
+AionUI: import /home/hat/AionUI/sovereign-exoself-mcp/dist/aionui.mcp.json
+/home/hat/AionUI/sovereign-exoself-mcp/.venv/bin/python -m sovereign_exoself_mcp

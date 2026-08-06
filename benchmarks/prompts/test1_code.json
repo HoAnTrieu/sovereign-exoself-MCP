@@ -1,0 +1,6 @@
+{
+  "id": "test1_code",
+  "name": "Python function with type hints",
+  "task": "Write a Python function called `validate_email` that takes an email string and returns True if valid, False otherwise. Include type hints and input validation. Return ONLY the code.",
+  "expected_output": "python_function"
+}

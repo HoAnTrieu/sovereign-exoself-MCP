@@ -1,0 +1,7 @@
+# Handoff
+
+Architecture: `server.py` owns the MCP lifecycle, `council.py` owns orchestration, `providers.py` owns normalized mock, OpenRouter, and local Ollama adapters, and `memory.py` owns SQLite schema v1. Invariants: stdout is MCP-only; public schemas stay backward compatible; schema edits need migrations; never store secrets; OpenRouter and Ollama are optional.
+
+Completed: all three tools, durable active/soft-deleted memory, FTS fallback, retry classification, mock concurrency, generated host configs, unit and stdio integration coverage. Ollama mode reuses the `Provider` interface, routes council roles to configurable local models, enforces bounded LiteLLM calls, and reports local availability/model inventory without making `system_status` depend on a running daemon. Mock remains the default and OpenRouter behavior is unchanged. Deferred: user config-file YAML parsing, optional embeddings, remote transport.
+
+Development: `uv sync --frozen`, `uv run ruff format --check .`, `uv run ruff check .`, `uv run mypy src`, `uv run pytest`, `bash scripts/smoke_test.sh --mock`. Optional live check: `OLLAMA_TEST_MODEL=qwen2.5-coder:7b uv run pytest -k ollama`; without the variable only the live test skips. Tested local models are `qwen2.5-coder:7b`, `qwen3.5:latest`, `deepseek-r1:latest`, `gemma4:e4b`, and `gpt-oss:latest`. Safe extension points are `Provider`, `MemoryRepository` migrations, and new internal council roles; do not add public tools casually. Environment overrides settings; database is XDG data path; state/log is XDG state path.

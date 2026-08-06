@@ -1,0 +1,49 @@
+# Sovereign Exoself MCP — Council Configuration
+# Copy to config/council.yaml and adjust for your environment
+
+# Provider mode: "mock" | "ollama" | "openrouter"
+provider_mode: mock
+
+# Ollama connection
+ollama_api_base: http://127.0.0.1:11434
+
+# Model assignments per council role (Config B — benchmark winner)
+# granite3.3:2b for manager/synthesizer/archivist (fast routing)
+# qwen2.5-coder:7b for worker/critic (quality execution)
+ollama_manager_model: granite3.3:2b
+ollama_worker_model: qwen2.5-coder:7b
+ollama_critic_model: qwen2.5-coder:7b
+ollama_synthesizer_model: granite3.3:2b
+ollama_archivist_model: granite3.3:2b
+
+# Concurrency (sequential by default on 8GB VRAM)
+max_concurrent_workers: 1
+
+# Timeouts and retries
+provider_timeout_seconds: 120
+retry_limit: 2
+
+# Generation parameters
+temperature: 0.0
+think: false
+
+# Routing configuration
+default_route: auto        # "auto" | "fast" | "review" | "full"
+allow_fast_path: true
+allow_review_path: true
+allow_full_council: true
+max_review_rounds: 1       # critic rejection retries (0-3)
+max_council_rounds: 2      # total manager retry rounds (1-5)
+stop_on_approve: true      # stop critic loop on APPROVE
+stop_on_valid_fast_result: true
+
+# Context window budgets per role (tokens)
+context_manager: 4096
+context_worker: 8192
+context_critic: 8192
+context_synthesizer: 4096
+context_archivist: 4096
+
+# Memory
+memory_extraction_enabled: true
+memory_limit: 5

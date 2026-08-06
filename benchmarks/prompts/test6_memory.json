@@ -1,0 +1,6 @@
+{
+  "id": "test6_memory",
+  "name": "Memory extraction",
+  "task": "Extract key facts from this completed task for memory storage:\nTask: Implemented user authentication with JWT tokens. Decision: Use RS256 algorithm. Project: E-commerce API v2.\nReturn extracted items as bullet points.",
+  "expected_output": "bullet_points"
+}

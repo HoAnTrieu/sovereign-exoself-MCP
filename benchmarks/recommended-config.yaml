@@ -1,0 +1,52 @@
+# Recommended Council AI Configuration
+# Based on benchmark results from 2026-08-04
+# Winner: Config B - Qwen + Granite
+
+# Council Settings
+council:
+  max_concurrent_workers: 1
+  max_council_rounds: 2
+  memory_limit: 5
+  retry_limit: 2
+  provider_timeout_seconds: 120
+
+# Model Configuration (Config B - Qwen + Granite)
+models:
+  manager: granite3.3:2b
+  worker: qwen2.5-coder:7b
+  engineer: qwen2.5-coder:7b
+  analyst: qwen2.5-coder:7b
+  critic: qwen2.5-coder:7b
+  synthesizer: granite3.3:2b
+  archivist: granite3.3:2b
+
+# Token Limits per Role
+token_limits:
+  manager: 250
+  worker: 1000
+  engineer: 1000
+  analyst: 1000
+  critic: 350
+  synthesizer: 500
+  archivist: 250
+
+# Generation Settings
+generation:
+  temperature: 0
+  think: false
+
+# Provider Settings
+provider:
+  mode: ollama
+  api_base: "http://127.0.0.1:11434"
+
+# Benchmark Results Summary
+benchmark:
+  date: "2026-08-04"
+  hardware: "RTX 4060 OC 8GB VRAM, Intel i5-12400F, 15GB RAM"
+  winner: "Config B - Qwen + Granite"
+  avg_latency_ms: 1504
+  p95_latency_ms: 3428
+  success_rate: 100.0
+  timeout_rate: 0.0
+  json_error_rate: 0.0

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "sovereign-exoself": {
+      "description": "Local durable personal council",
+      "command": "/absolute/path/.venv/bin/python",
+      "args": ["-m", "sovereign_exoself_mcp"],
+      "env": {"PYTHONUNBUFFERED": "1"}
+    }
+  }
+}
